@@ -1,6 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import TestButton from "./components/TestButton";
+import Card from "./components/Card";
+import Section from "./components/Section";
+
 
 function App() {
   return (
@@ -8,6 +11,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <TestButton />
+        <Section />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
