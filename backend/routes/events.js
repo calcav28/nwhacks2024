@@ -22,6 +22,28 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Fetches all events in the next two weeks; returns ordered by desc. attendees: /events/popular
+router.get('/popular', async (req, res) => {
+    try {
+        const db = req.mongoClient;
+        const startDate = new Date();
+        const endDate = new Date(startDate.getTime());
+        endDate.setDate(startDate.getDate() + 14);
+
+        const queryParams = {
+            "event_date": {
+                "$gte": startDate.toISOString(),
+                "$lte": endDate.toISOString()
+            }
+        }
+        
+        const data = await db.collection("events").find(queryParams).sort({ attendees: 1 }).toArray();
+        res.status(200).send(data);
+    } catch (e) {
+        res.status(500).send(`Error: ${e.message}`);
+    }
+});
+
 // Fetches all events coming up in the next 7 days: /events/week
 router.get('/week', async (req, res) => {
     try {

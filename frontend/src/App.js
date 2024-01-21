@@ -11,7 +11,7 @@ function App() {
 
   async function fetchMostPopularEvents() {
     try {
-        const response = await fetch(`http://localhost:6969/events`);
+        const response = await fetch(`http://localhost:6969/events/popular`);
         const data = await response.json();
         return data;
     } catch (e) {
@@ -19,7 +19,7 @@ function App() {
     }
   }
 
-  async function fetchThisWeek() {
+  async function fetchThisWeekEvents() {
     try {
         const response = await fetch(`http://localhost:6969/events/week`);
         const data = await response.json();
@@ -52,8 +52,8 @@ function App() {
         <Route exact path= "/" element={
           <>
             <Section fetchEvents={fetchAllEvents} />
-            <Section fetchEvents={fetchThisWeek} />
-            <Section fetchEvents={fetchAllEvents} />
+            <Section fetchEvents={fetchThisWeekEvents} />
+            <Section fetchEvents={fetchMostPopularEvents} />
           </>
         }/>
         <Route path="event/:eventId" element={<Event />}/>
