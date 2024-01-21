@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./Card";
-import GridStyles from "../styles/GridStyles.css";
+import '../../styles/GridStyles.css';
 
 
 /* For future: Put the div className stuff into a 

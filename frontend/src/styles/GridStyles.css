@@ -7,8 +7,8 @@
 .grid-item {
     flex: 0 0 auto;
     width: 150px;
-    height: 200px;
-    border: 1px none #ccc;
+    height: 150px;
+    border: 0px none #ccc;
     margin-right: 50px;
     margin-top: 1em;
     display: flex;

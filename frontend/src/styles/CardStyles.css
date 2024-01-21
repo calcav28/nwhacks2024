@@ -1,11 +1,19 @@
 .styled {
-    border: 0;
-    background-color: rgb(255, 255, 255);
-    background-image: none;
     width: 150px;
-    height: 150px; /* ensure that width and height are same as in 
-                        GridStyles.css*/
-    border-radius: 1em;
+    height: 150px;
+    border-radius: 15%;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+    border: 0;
+}
+
+.selectionPhoto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15%;
+    display: block;
     outline: none;
 }
 

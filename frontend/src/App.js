@@ -1,10 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
-import Card from "./components/Card";
-import Section from "./components/Section";
-import NavigationBar from './components/NavBar';
+import TestButton from "./components/HomePage/TestButton";
+import Card from "./components/HomePage/Card";
+import Section from "./components/HomePage/Section";
+import NavBar from './components/Layout/NavBar';
+import Event from './components/Event/Event';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
-
 
 function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -14,13 +15,21 @@ function App() {
 };
 
   return (
-    <div style={{margin: "auto"}}
+    <Router>
+      <div style = {{margin: "auto"}}
     onScroll={handleScroll}>
-      <div>
-      <NavigationBar />
-      <Section />
-    </div>
-    </div>
+        <NavBar />
+      <Routes>
+        <Route exact path= "/" element={
+        <>
+        <Card />
+        <Section />
+        </>
+        }/>
+        <Route path="event/:eventId" element={<Event />}/>
+      </Routes>
+      </div>
+    </Router>
   );
 }
 
