@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import '../../styles/GridStyles.css';
+
+const URL = "http://localhost:6969";
 
 
 /* For future: Put the div className stuff into a 
@@ -8,64 +10,31 @@ import '../../styles/GridStyles.css';
 
    Each grid-container is its own row
 */
-export default function Section() {
-    function displayCard() {
-        <div className="grid-item"> 
-            <Card />
-            </div>
-    }
+export default function Section(props) {
+    const [events, setEvents] = useState([]);
+
+    useEffect(() => {
+        async function fetchEventContent() {
+            const events = await props.fetchEvents();
+            setEvents(events);
+        }
+        fetchEventContent();
+    }, []);
     
     return (
-        <div>
-        <div className="title-item">
-        Popular 
-        </div> 
-        <div className="grid-container">
-            <div className="grid-item">
-            <Card />
+        <>
+            <div className="title-item">
+                <p>Popular</p>
             </div>
-            <div className="grid-item">
-            <Card />
+            <div className="grid-container">
+                {events.map((event) => {
+                    return (
+                        <div className="grid-item">
+                            <Card key={event.event_id} imgUrl={event.image_url} />
+                        </div>
+                    );
+                })}
             </div>
-            <div className="grid-item">
-            <Card />
-            </div>
-            <div className="grid-item">
-            <Card />
-            </div>
-            <div className="grid-item">
-            <Card />
-            </div>
-            <div className="grid-item">
-            <Card />
-            </div>
-            <div className="grid-item">
-            <Card />
-            </div>
-            <div className="grid-item">
-            <Card />
-            </div>
-            <div className="grid-item">
-            <Card />
-            </div>
-            <div className="grid-item">
-            <Card />
-            </div>
-        </div>
-        <div className="title-item">
-        This Week
-        </div>
-        <div className="grid-container">
-            <div className="grid-item"> 
-            <Card />
-            </div>
-            <div className="grid-item">
-            <Card />
-            </div>
-            <div className="grid-item">
-            <Card />
-            </div>
-            </div>
-        </div>
+        </>
     );
 }

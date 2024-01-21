@@ -9,6 +9,36 @@ import MakeEvent from './components/HomePage/MakeEvent';
 
 function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
+
+  async function fetchMostPopularEvents() {
+    try {
+        const response = await fetch(`http://localhost:6969/events/popular`);
+        const data = await response.json();
+        return data;
+    } catch (e) {
+        console.log(e.message);
+    }
+  }
+
+  async function fetchThisWeekEvents() {
+    try {
+        const response = await fetch(`http://localhost:6969/events/week`);
+        const data = await response.json();
+        return data;
+    } catch (e) {
+        console.log(e.message);
+    }
+  }
+
+  async function fetchAllEvents() {
+    try {
+        const response = await fetch(`http://localhost:6969/events`);
+        const data = await response.json();
+        return data;
+    } catch (e) {
+        console.log(e.message);
+    }
+  }
   
   const handleScroll = (e) => {
     setScrollPosition(e.target);
@@ -23,7 +53,9 @@ function App() {
         <Route exact path= "/" element={
           <>
           <MakeEvent />
-            <Section />
+            <Section fetchEvents={fetchAllEvents} />
+            <Section fetchEvents={fetchThisWeekEvents} />
+            <Section fetchEvents={fetchMostPopularEvents} />
           </>
         }/>
         <Route path="event/:eventId" element={<Event />}/>
