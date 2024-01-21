@@ -1,14 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
-import TestButton from "./components/TestButton";
 import Card from "./components/Card";
 import Section from "./components/Section";
 import NavigationBar from './components/NavBar';
+import { useState } from 'react';
 
 
 function App() {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  
+  const handleScroll = (e) => {
+    setScrollPosition(e.target);
+};
+
   return (
-    <div style={{margin: "auto"}}>
+    <div style={{margin: "auto"}}
+    onScroll={handleScroll}>
       <div>
       <NavigationBar />
       <Section />

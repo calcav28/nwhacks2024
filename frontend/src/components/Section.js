@@ -24,6 +24,27 @@ export default function Section() {
             <div className="grid-item">
             <Card />
             </div>
+            <div className="grid-item">
+            <Card />
+            </div>
+            <div className="grid-item">
+            <Card />
+            </div>
+            <div className="grid-item">
+            <Card />
+            </div>
+            <div className="grid-item">
+            <Card />
+            </div>
+            <div className="grid-item">
+            <Card />
+            </div>
+            <div className="grid-item">
+            <Card />
+            </div>
+            <div className="grid-item">
+            <Card />
+            </div>
         </div>
         <div className="title-item">
         This Week
