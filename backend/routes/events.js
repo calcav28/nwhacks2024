@@ -37,7 +37,7 @@ router.get('/popular', async (req, res) => {
             }
         }
         
-        const data = await db.collection("events").find(queryParams).sort({ attendees: 1 }).toArray();
+        const data = await db.collection("events").find(queryParams).sort({ attendees: -1 }).toArray();
         res.status(200).send(data);
     } catch (e) {
         res.status(500).send(`Error: ${e.message}`);
