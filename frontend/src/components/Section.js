@@ -1,10 +1,20 @@
 import React from "react";
 import Card from "./Card";
-import GridComponent from "../styles/GridComponent.css";
+import GridStyles from "../styles/GridStyles.css";
 
+
+/* For future: Put the div className stuff into a 
+   separate function so it's easier to do the map :D
+*/
 export default function Section() {
     return (
         <div className="grid-container">
+            <div className="grid-item"> 
+            <Card />
+            </div>
+            <div className="grid-item">
+            <Card />
+            </div>
             <div className="grid-item">
             <Card />
             </div>
