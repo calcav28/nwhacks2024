@@ -51,12 +51,14 @@ function App() {
         <NavBar />
       <Routes>
         <Route exact path= "/" element={
+          <div className ="containerCard">
           <>
           <MakeEvent />
             <Section fetchEvents={fetchAllEvents} />
             <Section fetchEvents={fetchThisWeekEvents} />
             <Section fetchEvents={fetchMostPopularEvents} />
           </>
+          </div>
         }/>
         <Route path="event/:eventId" element={<Event />}/>
       </Routes>
