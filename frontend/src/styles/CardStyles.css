@@ -22,3 +22,9 @@
     height: 20px;
     align-self: stretch;
 }
+
+.eventbuttonstyle {
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+}

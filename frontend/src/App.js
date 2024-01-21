@@ -5,6 +5,7 @@ import NavBar from './components/Layout/NavBar';
 import Event from './components/Event/Event';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
+import MakeEvent from './components/HomePage/MakeEvent';
 
 function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route exact path= "/" element={
           <>
+          <MakeEvent />
             <Section />
           </>
         }/>
