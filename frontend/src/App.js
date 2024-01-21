@@ -54,9 +54,10 @@ function App() {
           <div className ="containerCard">
           <>
           <MakeEvent />
-            <Section fetchEvents={fetchMostPopularEvents} />
-            <Section fetchEvents={fetchThisWeekEvents} />
-            <Section fetchEvents={fetchAllEvents} />
+            <Section fetchEvents={fetchMostPopularEvents} title={"Most Popular"}/>
+            <Section fetchEvents={fetchThisWeekEvents} title={"This Week"}/>
+            <Section fetchEvents={fetchAllEvents} title={"All Events"}/>
+
           </>
           </div>
         }/>

@@ -6,8 +6,7 @@
     display: flex;
     overflow-x: auto;
     overflow-y: visible;
-    margin-top: -15px;
-    
+    margin-top: -15px;    
 }
 
 .grid-item {
