@@ -51,10 +51,12 @@ export default function MakeEvent() {
     }
 
     return(
-        <div className="plusButton">
-            <img src="./images/plus.png" alt="Search Icon" className="plusIcon" />            
+        <div className="plusButton">           
             <Popup trigger=
-                {<button className="eventbuttonstyle"></button>} 
+                {<button className="eventbuttonstyle">
+                    <img src="./images/plus.png" alt="Search Icon" className="plusIcon" /> 
+                </button>} 
+
                 modal nested>
                 {
                     close => (
@@ -62,18 +64,12 @@ export default function MakeEvent() {
                             <div className='content'>
                                 <h3>CREATE AN EVENT</h3>
                             </div>
-                <h4>Event Title</h4>
-                <input type="text" className="searchBar" placeholder="" onChange={(e) => setEventTitle(e.target.value)}/>
-                <h4>Club Name</h4>
-                <input type="text" className="searchBar" placeholder="" onChange={(e) => setClubName(e.target.value)}/>
-                <h4>Event Date & Time</h4>
-                <input type="datetime-local" className="searchBar" placeholder="" onChange={(e) => setDate(e.target.value)}/>
-                <h4>Description</h4>
-                <input type="text" className="searchBar" placeholder="" onChange={(e) => setDescription(e.target.value)}/>
-                <h4>Image URL</h4>
-                <input type="text" className="searchBar" placeholder="" onChange={(e) => setImageURL(e.target.value)}/>
-                <h4>Location</h4>
-                <input type="text" className="searchBar" placeholder="" onChange={(e) => setLocation(e.target.value)}/>
+                <input type="text" className="searchBar" placeholder="Event Title" onChange={(e) => setEventTitle(e.target.value)}/>
+                <input type="text" className="searchBar" placeholder="Club Name" onChange={(e) => setClubName(e.target.value)}/>
+                <input type="datetime-local" className="searchBar" placeholder="Date & Time" onChange={(e) => setDate(e.target.value)}/>
+                <input type="text" className="searchBar" placeholder="Description" onChange={(e) => setDescription(e.target.value)}/>
+                <input type="text" className="searchBar" placeholder="Image URL" onChange={(e) => setImageURL(e.target.value)}/>
+                <input type="text" className="searchBar" placeholder="Location" onChange={(e) => setLocation(e.target.value)}/>
                 <div>
                 </div>
                 <button onClick={addEvent} className ="addEvent">Add Event</button>
