@@ -1,10 +1,13 @@
 import React from "react";
-import Section from "./Section";
+import CardStyles from "../styles/CardStyles.css";
+import logo from '../logo.svg';
 
 export default function Card() {
     return (
-        <button>
+        <button className="styled"
+                size="lg">
             Hello Gamers!
+            <img src={logo} alt="Logo" />
         </button>
     );
 }

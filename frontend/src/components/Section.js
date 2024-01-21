@@ -1,12 +1,44 @@
 import React from "react";
 import Card from "./Card";
+import GridStyles from "../styles/GridStyles.css";
 
+
+/* For future: Put the div className stuff into a 
+   separate function so it's easier to do the map :D
+
+   Each grid-container is its own row
+*/
 export default function Section() {
     return (
         <div>
-    <Card />
-    <Card />
-
+        <div className="title-item">
+        Popular
+        </div>
+        <div className="grid-container">
+            <div className="grid-item"> 
+            <Card />
+            </div>
+            <div className="grid-item">
+            <Card />
+            </div>
+            <div className="grid-item">
+            <Card />
+            </div>
+        </div>
+        <div className="title-item">
+        This Week
+        </div>
+        <div className="grid-container">
+            <div className="grid-item"> 
+            <Card />
+            </div>
+            <div className="grid-item">
+            <Card />
+            </div>
+            <div className="grid-item">
+            <Card />
+            </div>
+            </div>
         </div>
     );
 }
