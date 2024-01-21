@@ -11,10 +11,10 @@
 
 .grid-item {
     flex: 0 0 auto;
-    width: 20vh;
-    height: 20vh;
+    width: 175px;
+    height: 190px;
     border: 0px none #ccc;
-    margin-right: 6px;
+    margin-right: 20px;
     display: flex;
     flex-direction: row;
     justify-content: center;
