@@ -60,27 +60,27 @@ export default function MakeEvent() {
                     close => (
                         <div className='modal'>
                             <div className='content'>
-                                Create an Event
+                                <h3>CREATE AN EVENT</h3>
                             </div>
-                <div>Event Title</div>
+                <h4>Event Title</h4>
                 <input type="text" className="searchBar" placeholder="" onChange={(e) => setEventTitle(e.target.value)}/>
-                <div>Club Name</div>
+                <h4>Club Name</h4>
                 <input type="text" className="searchBar" placeholder="" onChange={(e) => setClubName(e.target.value)}/>
-                <div>Event Date & Time</div>
+                <h4>Event Date & Time</h4>
                 <input type="datetime-local" className="searchBar" placeholder="" onChange={(e) => setDate(e.target.value)}/>
-                <div>Description</div>
+                <h4>Description</h4>
                 <input type="text" className="searchBar" placeholder="" onChange={(e) => setDescription(e.target.value)}/>
-                <div>Image URL</div>
+                <h4>Image URL</h4>
                 <input type="text" className="searchBar" placeholder="" onChange={(e) => setImageURL(e.target.value)}/>
-                <div>Location</div>
+                <h4>Location</h4>
                 <input type="text" className="searchBar" placeholder="" onChange={(e) => setLocation(e.target.value)}/>
                 <div>
                 </div>
-                <button onClick={addEvent}>Add Event</button>
+                <button onClick={addEvent} className ="addEvent">Add Event</button>
                 <div>
                 </div>
                                 <button onClick=
-                                    {() => close()}>
+                                    {() => close()} className="close">
                                         Close
                                 </button>
                             </div>
