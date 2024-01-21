@@ -1,6 +1,6 @@
 .grid-container {
     display: flex;
-    overflow-x: auto;
+    overflow-x: visible;
 }
 
 .grid-item {

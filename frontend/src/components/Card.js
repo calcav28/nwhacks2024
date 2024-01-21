@@ -20,6 +20,7 @@ export default function Card() {
         
         </button>
         <button 
+        size="sm"
         className="bottomstyled"
         onClick={handleClick}>
             Join Event
