@@ -5,6 +5,7 @@ const router = express.Router();
 router.get('/', (req, res) => {
     // You can access any query parameters to implement filtering
     // Example: req.query.date, req.query.location
+    
 });
 
 // Adds a new event: /events
@@ -27,3 +28,5 @@ router.get('/search', (req, res) => {
     // You can access any query parameters to implement filtering
     // Example: req.query.date, req.query.location
 });
+
+module.exports = router;

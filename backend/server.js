@@ -1,6 +1,7 @@
 // Import necessary modules
 const express = require('express');
 const cors = require('cors');
+const app = express();
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
 // Import routes
@@ -10,7 +11,6 @@ const eventsRoute = require('./routes/events');
 require("dotenv").config({ path: "./config.env" });
 
 // Setup Express
-const app = express();
 app.use(cors());
 app.use(express.json());
 
@@ -32,6 +32,12 @@ async function connectDatabase() {
         console.error("Could not connect to database: ", error);
     }
 }
+
+// Middleware to attach the client to the request
+app.use((req, res, next) => {
+  req.mongoClient = db;
+  next();
+});
 
 // Routes
 app.use('/events', eventsRoute);
