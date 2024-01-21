@@ -30,7 +30,7 @@ export default function Section(props) {
                 {events.map((event) => {
                     return (
                         <div className="grid-item">
-                            <Card key={event.event_id} imgUrl={event.image_url} />
+                            <Card key={event.event_id} event={event} />
                         </div>
                     );
                 })}

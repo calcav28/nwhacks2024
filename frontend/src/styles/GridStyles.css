@@ -5,7 +5,7 @@
 .grid-container {
     display: flex;
     overflow-x: auto;
-    overflow-y: visible;
+    overflow-y: hidden;
 }
 
 .grid-item {
