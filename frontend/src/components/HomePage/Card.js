@@ -29,23 +29,17 @@ export default function Card(props) {
         <div className="fillImage">
             <img src={event.image_url} alt="Event Selection" className="selectionPhoto" onClick={togglePopup} />
             <Popup open={isOpen} closeOnDocumentClick onClose={togglePopup}>
-                <div className="popup-container">
-
-                <div>
-                {event.club_name}
-                {event.event_title}
-                {event.event_location}
-                {new Date (event.event_date).getDay()}   
-                {months [new Date (event.event_date).getMonth()]}
-
-                {event.event_description}
-                </div>
-                <div>
-                <img src={event.image_url} alt="Event Selection" className="selectionPhoto" />
-                </div>
-                <div>
-                </div>
-
+                <div className="event">
+    <div className = "textContainer">
+    <img src={event.image_url} alt="Event Selection" className="selectionPhoto" />
+      <h3>Event:    {event.event_title}</h3>
+      <h3>Location: {event.event_location}</h3>
+      <h3>Time:   {new Date (event.event_date).getDay()}   {months [new Date (event.event_date).getMonth()]}</h3>
+      <p>
+      {event.event_description}
+      </p>
+      <h3>{event.attendees} people are interested</h3>
+    </div>
                 </div>
             </Popup>
         </div>

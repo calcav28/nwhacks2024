@@ -53,9 +53,9 @@ function App() {
         <Route exact path= "/" element={
           <>
           <MakeEvent />
-            <Section fetchEvents={fetchAllEvents} />
-            <Section fetchEvents={fetchThisWeekEvents} />
-            <Section fetchEvents={fetchMostPopularEvents} />
+            <Section fetchEvents={fetchAllEvents} title={"Most Popular"}/>
+            <Section fetchEvents={fetchThisWeekEvents} title={"This Week"}/>
+            <Section fetchEvents={fetchMostPopularEvents} title={"All Events"}/>
           </>
         }/>
         <Route path="event/:eventId" element={<Event />}/>

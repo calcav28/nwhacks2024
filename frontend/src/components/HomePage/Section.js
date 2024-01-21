@@ -24,7 +24,7 @@ export default function Section(props) {
     return (
         <>
             <div className="title-item">
-                <p>Popular</p>
+                <p>{props.title}</p>
             </div>
             <div className="grid-container">
                 {events.map((event) => {
