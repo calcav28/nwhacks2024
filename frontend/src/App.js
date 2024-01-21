@@ -51,10 +51,16 @@ function App() {
       <Routes>
         <Route exact path= "/" element={
           <div className ="containerCard">
-          <>
-            <Section fetchEvents={fetchAllEvents} />
-            <Section fetchEvents={fetchThisWeekEvents} />
-            <Section fetchEvents={fetchMostPopularEvents} />
+          <>  
+            
+              <Section fetchEvents={fetchAllEvents} />
+            
+            
+              <Section fetchEvents={fetchThisWeekEvents} />
+            
+            
+              <Section fetchEvents={fetchMostPopularEvents} />
+            
           </>
           </div>
         }/>
