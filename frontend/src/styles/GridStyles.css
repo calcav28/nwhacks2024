@@ -1,12 +1,13 @@
 .grid-container {
     display: flex;
     overflow-x: auto;
+    overflow-y: visible;
 }
 
 .grid-item {
     flex: 0 0 auto;
     width: 150px;
-    height: 150px;
+    height: 200px;
     border: 1px none #ccc;
     margin-right: 50px;
     margin-top: 1em;

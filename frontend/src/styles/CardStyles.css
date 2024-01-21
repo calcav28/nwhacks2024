@@ -1,9 +1,16 @@
 .styled {
-    border: 30;
+    border: 0;
     background-color: rgb(255, 255, 255);
     background-image: none;
     width: 150px;
     height: 150px; /* ensure that width and height are same as in 
                         GridStyles.css*/
     border-radius: 1em;
+    outline: none;
+}
+
+.bottomstyled {
+    width: 100px;
+    height: 20px;
+    align-self: stretch;
 }

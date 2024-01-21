@@ -9,13 +9,40 @@ import GridStyles from "../styles/GridStyles.css";
    Each grid-container is its own row
 */
 export default function Section() {
+    function displayCard() {
+        <div className="grid-item"> 
+            <Card />
+            </div>
+    }
+    
     return (
         <div>
         <div className="title-item">
-        Popular
-        </div>
+        Popular 
+        </div> 
         <div className="grid-container">
-            <div className="grid-item"> 
+            <div className="grid-item">
+            <Card />
+            </div>
+            <div className="grid-item">
+            <Card />
+            </div>
+            <div className="grid-item">
+            <Card />
+            </div>
+            <div className="grid-item">
+            <Card />
+            </div>
+            <div className="grid-item">
+            <Card />
+            </div>
+            <div className="grid-item">
+            <Card />
+            </div>
+            <div className="grid-item">
+            <Card />
+            </div>
+            <div className="grid-item">
             <Card />
             </div>
             <div className="grid-item">
