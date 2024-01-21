@@ -8,9 +8,11 @@ import NavigationBar from './components/NavBar';
 
 function App() {
   return (
-    <div>
+    <div style={{margin: "auto"}}>
+      <div>
       <NavigationBar />
       <Section />
+    </div>
     </div>
   );
 }
