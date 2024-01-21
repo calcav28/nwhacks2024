@@ -5,8 +5,7 @@
 .grid-container {
     display: flex;
     overflow-x: auto;
-    overflow-y: visible;
-    margin-top: -15px;    
+    overflow-y: hidden;
 }
 
 .grid-item {
@@ -15,7 +14,7 @@
     height: 150px;
     border: 0px none #ccc;
     margin-right: 30px;
-    margin-top: 0.2em;
+    margin-top: 1em;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -29,11 +28,9 @@
     margin-top: 10px;
     font-weight: bold;
     font-size: 24px;
-    font: roboto;
 }
 
-.title-item {
-    margin-bottom: 0px;
-    padding-bottom: -5px;
+.title-item p {
+    margin: 0.5em;
 }
 
