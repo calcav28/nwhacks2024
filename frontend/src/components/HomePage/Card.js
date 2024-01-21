@@ -16,7 +16,7 @@ export default function Card(props) {
     const eventDisplayMinutes = eventTimeMinutes < 10 ? `0${eventTimeMinutes}` : eventTimeMinutes;
     const eventTimeHours = eventDate.getHours();
     const eventDisplayHours = eventTimeHours < 10 ? `0${eventTimeHours}` : eventTimeHours;
-    const displayDate = `${eventDate.getDay() + " " + months[eventDate.getMonth()] + " • " + eventDisplayHours + ":" + eventDisplayMinutes}`;
+    const displayDate = `${eventDate.getDate() + " " + months[eventDate.getMonth()] + " • " + eventDisplayHours + ":" + eventDisplayMinutes}`;
 
     function handleClick() {
         if (~hasCounted) {
