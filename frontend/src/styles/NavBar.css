@@ -4,23 +4,40 @@
     justify-content: space-between;
     padding: 0 10px;
     border-bottom: 2px solid #000;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .navbar .logo {
     margin-right: 20px;
     height: 100px;
+    block-size: 50px;
 }
 
 .navbar .searchBar {
     margin-right: 20px;
-    height: 20px;
-    width: 300px;
+    height: 30px;
+    width: 600px;
     border: 2px solid #000;
-    border-radius: 5px;
+    border-radius: 15px;
+    padding-left: 35px;
 }
 
 .navbar .userPhoto {
     border: 2px solid #000;
     height: 50px;
     border-radius: 50%;
+    block-size: 30px;
+}
+
+.navbar .searchContainer {
+    position: relative;
+  }
+
+.searchIcon {
+    position: absolute;
+    left: 10px; /* Adjust this value based on the exact size of your icon */
+    top: 50%;
+    transform: translateY(-50%);
+    height: 20px; /* Adjust to the size of your icon */
 }
