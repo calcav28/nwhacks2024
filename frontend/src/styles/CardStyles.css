@@ -14,4 +14,11 @@
     object-fit: cover;
     border-radius: 15%;
     display: block;
+    outline: none;
+}
+
+.bottomstyled {
+    width: 100px;
+    height: 20px;
+    align-self: stretch;
 }
