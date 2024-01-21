@@ -11,7 +11,7 @@ function App() {
 
   async function fetchMostPopularEvents() {
     try {
-        const response = await fetch(`http://localhost:6969/events`);
+        const response = await fetch(`http://localhost:6969/events/popular`);
         const data = await response.json();
         return data;
     } catch (e) {
@@ -19,17 +19,9 @@ function App() {
     }
   }
 
-  async function fetchThisWeek() {
-    const today = new Date();
-    const plusSevenDays = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
-    const params = {
-      "event_date[gte]": today.toISOString(),
-      "event_date[lte]": plusSevenDays.toISOString()
-    }
-    const queryParams = new URLSearchParams(params).toString();
-
+  async function fetchThisWeekEvents() {
     try {
-        const response = await fetch(`http://localhost:6969/events?${queryParams}`);
+        const response = await fetch(`http://localhost:6969/events/week`);
         const data = await response.json();
         return data;
     } catch (e) {
@@ -60,8 +52,8 @@ function App() {
         <Route exact path= "/" element={
           <>
             <Section fetchEvents={fetchAllEvents} />
-            <Section fetchEvents={fetchAllEvents} />
-            <Section fetchEvents={fetchAllEvents} />
+            <Section fetchEvents={fetchThisWeekEvents} />
+            <Section fetchEvents={fetchMostPopularEvents} />
           </>
         }/>
         <Route path="event/:eventId" element={<Event />}/>
