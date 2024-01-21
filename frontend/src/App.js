@@ -3,26 +3,14 @@ import './App.css';
 import TestButton from "./components/TestButton";
 import Card from "./components/Card";
 import Section from "./components/Section";
+import NavigationBar from './components/NavBar';
 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Section />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NavigationBar />
+      <Section />
     </div>
   );
 }
