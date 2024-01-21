@@ -5,5 +5,5 @@
     width: 150px;
     height: 150px; /* ensure that width and height are same as in 
                         GridStyles.css*/
-    border-radius: 25px;
+    border-radius: 1em;
 }
