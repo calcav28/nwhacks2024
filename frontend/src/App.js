@@ -1,5 +1,4 @@
 import './App.css';
-import TestButton from "./components/HomePage/TestButton";
 import Card from "./components/HomePage/Card";
 import Section from "./components/HomePage/Section";
 import NavBar from './components/Layout/NavBar';
@@ -21,10 +20,9 @@ function App() {
         <NavBar />
       <Routes>
         <Route exact path= "/" element={
-        <>
-        <Card />
-        <Section />
-        </>
+          <>
+            <Section />
+          </>
         }/>
         <Route path="event/:eventId" element={<Event />}/>
       </Routes>
