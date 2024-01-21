@@ -4,10 +4,17 @@ import CardStyles from "../styles/CardStyles.css";
 import logo from '../logo.svg';
 
 export default function Card() {
-        const [count, setCount] = useState(0);
+    var hasCounted;    
+    const [count, setCount] = useState(0);
 
     function handleClick() {
-        setCount(count + 1);
+        if (~hasCounted) {
+            hasCounted = true;
+            setCount(count + 1);
+        } else {
+            hasCounted = false;
+            setCount(count - 1);
+        }
     }
     
     return (
@@ -27,6 +34,5 @@ export default function Card() {
         </button>
         </div>
 
-        
     );
 }
