@@ -51,9 +51,10 @@ export default function MakeEvent() {
     }
 
     return(
-        <div>
+        <div className="plusButton">
+            <img src="./images/plus.png" alt="Search Icon" className="plusIcon" />            
             <Popup trigger=
-                {<button className="eventbuttonstyle"> Create an Event </button>} 
+                {<button className="eventbuttonstyle"></button>} 
                 modal nested>
                 {
                     close => (
