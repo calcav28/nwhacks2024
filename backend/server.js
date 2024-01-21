@@ -23,10 +23,14 @@ const db = new MongoClient(process.env.URI, {
     }
 });
 
+// Bind db to req param
+let dbClient;
+
 async function connectDatabase() {
     try {
         // Connect to database
         await db.connect();
+        dbClient = db.db("eventsData");
         console.log("Connected to MongoDB database.");
     } catch (error) {
         console.error("Could not connect to database: ", error);
@@ -35,7 +39,7 @@ async function connectDatabase() {
 
 // Middleware to attach the client to the request
 app.use((req, res, next) => {
-  req.mongoClient = db;
+  req.mongoClient = dbClient;
   next();
 });
 
