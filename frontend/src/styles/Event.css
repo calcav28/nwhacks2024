@@ -1,28 +1,59 @@
 .event {
-    margin-top: 50px;
-    border: 2px solid #000;
-    border-radius: 15px;
-    margin-left: 100px;
-    margin-right: 100px;
+    width: auto;
+    height: 100%;
+    margin: 2em;
+    display: inline-flex;
 }
 
 .photoContainer {
     position: relative;
 }
 .eventPhoto {
-    margin-top: 20px;;
     border-radius: 15px;
-    border: 2px solid black;
-    height: auto;
-    width: 100%;
-    max-width: 600px;
+    height: 250px;
+    width: 250px;
     align-items: center;
-    margin-left: auto;
-    margin-right: auto;
     display: block;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
-.textContainer {
-    margin-left: 20px;
-    margin-right: 20px;
+.popup-content {
+    border-radius: 15px;
+    width: auto;
+    max-width: 55%;
+}
+
+.event-content-container-text {
+    margin-left: 2em;
+    width: auto;
+}
+
+.event-content-container-text p {
+ }
+
+.event-content-container-text h2 {
+    margin-top: 0.5em;
+    margin-bottom: 0em;
+ }
+
+ .event-content-container-text h3 {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+ }
+
+.event-content-container-text h4 {
+   margin-bottom: 0;
+}
+
+.event-content-container-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.event-content-container-details-location {
+    margin-right: 4em;
+}
+
+.event-content-container-details-attendees {
 }

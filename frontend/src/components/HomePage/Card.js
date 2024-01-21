@@ -11,6 +11,13 @@ export default function Card(props) {
     const [isOpen, setIsOpen] = useState(false);
     const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
+    const eventDate = new Date(event.event_date);
+    const eventTimeMinutes = eventDate.getMinutes();
+    const eventDisplayMinutes = eventTimeMinutes < 10 ? `0${eventTimeMinutes}` : eventTimeMinutes;
+    const eventTimeHours = eventDate.getHours();
+    const eventDisplayHours = eventTimeHours < 10 ? `0${eventTimeHours}` : eventTimeHours;
+    const displayDate = `${eventDate.getDay() + " " + months[eventDate.getMonth()] + " • " + eventDisplayHours + ":" + eventDisplayMinutes}`;
+
     function handleClick() {
         if (~hasCounted) {
             hasCounted = true;
@@ -28,18 +35,20 @@ export default function Card(props) {
     return (
         <div className="fillImage">
             <img src={event.image_url} alt="Event Selection" className="selectionPhoto" onClick={togglePopup} />
-            <Popup open={isOpen} closeOnDocumentClick onClose={togglePopup}>
+            <Popup className="event-popup" open={isOpen} closeOnDocumentClick onClose={togglePopup}>
                 <div className="event">
-    <div className = "textContainer">
-    <img src={event.image_url} alt="Event Selection" className="selectionPhoto" />
-      <h3>Event:    {event.event_title}</h3>
-      <h3>Location: {event.event_location}</h3>
-      <h3>Time:   {new Date (event.event_date).getDay()}   {months [new Date (event.event_date).getMonth()]}</h3>
-      <p>
-      {event.event_description}
-      </p>
-      <h3>{event.attendees} people are interested</h3>
-    </div>
+                    <div>
+                        <img src={event.image_url} alt="Event Selection" className="eventPhoto" />
+                    </div>
+                    <div className="event-content-container-text">
+                        <h4>{displayDate}</h4>
+                        <h2>{event.event_title}</h2>
+                        <p>{event.event_description}</p>
+                        <div className="event-content-container-details">
+                            <h4 className="event-content-container-details-location">{event.event_location}</h4>
+                            <h4 className="event-content-container-details-attendees">{event.attendees} people are interested</h4>
+                        </div>
+                    </div>
                 </div>
             </Popup>
         </div>
