@@ -22,6 +22,28 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Fetches all events coming up in the next 7 days: /events/week
+router.get('/week', async (req, res) => {
+    try {
+        const db = req.mongoClient;
+        const startDate = new Date();
+        const endDate = new Date(startDate.getTime());
+        endDate.setDate(startDate.getDate() + 7);
+
+        const queryParams = {
+            "event_date": {
+                "$gte": startDate.toISOString(),
+                "$lte": endDate.toISOString()
+            }
+        }
+        
+        const data = await db.collection("events").find(queryParams).toArray();
+        res.status(200).send(data);
+    } catch (e) {
+        res.status(500).send(`Error: ${e.message}`);
+    }
+});
+
 // Adds a new event: /events
 router.post('/', async (req, res) => {
     try {
